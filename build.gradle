@@ -9,6 +9,7 @@ group = 'jpabook'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+//롬복때문에 생긴것
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
