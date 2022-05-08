@@ -20,7 +20,16 @@ logging:
   level:
     org.hibernate.SQL: debug
 #    애는 로거를 통해서 출력한다
+    org.hibernate.type: trace
+#    이 trace세팅은 로그에 인자의 값과 데이터 타입이 노출된다.
+#    p6spy의 경우 로그에 인자와 값을 더 잘보여주는 플러그인이다.
 
 
 server:
   port: 8080
+
+
+
+
+# 이 파일을 통해 persistence.xml 파일이 생략된다.
+# 부트로 jpa를 yml파일에 남기는것을 표준으로 생각하자
