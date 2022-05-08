@@ -1,6 +1,7 @@
 package jpabook.jpashop;
 
 import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.repository.MemberRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +9,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 //4버전은 @RunWith를 필요로한다. 얘는 5버전
 @SpringBootTest
@@ -25,16 +24,18 @@ class MemberRepositoryTest {
     public void testMember() throws Exception{
 
         //given
-//        Member member = new Member();
-//        member.setUsername("memberA");
+        Member member = new Member();
+        member.setName("memberA111");
+
+        memberRepository.save(member);
 
         //when
 //        Long savedId = memberRepository.save(member);
-//        Member findMember = memberRepository.find(savedId);
+
 
         //then
 //        Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
-//        Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
+//        Assertions.assertThat(findMember.getName()).isEqualTo(member.getName());
 
 
         //저장할때의 객체와 조회한 후의 객체는 같은 객체이고 주소이다. ==에서 true를 출력
