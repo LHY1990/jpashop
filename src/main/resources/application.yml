@@ -1,12 +1,9 @@
 spring:
-  autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-
   datasource:
-    url: jdbc:mariadb://localhost:3307/jpashop;MVCC=TRUE
+    url: jdbc:mariadb://localhost:3307/jpashop
+    driver-class-name: org.mariadb.jdbc.Driver
     username: root
     password: dlwmal42
-    driver-class-name: org.mariadb.jdbc.Driver
 
   jpa:
     hibernate:
@@ -15,6 +12,7 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
   #show_sql은 sysout 으로 출력한다. 시스템 구동중엔 이걸쓰지않는다.
   #스프링부트 매뉴얼에 있다.
 
@@ -22,3 +20,7 @@ logging:
   level:
     org.hibernate.SQL: debug
 #    애는 로거를 통해서 출력한다
+
+
+server:
+  port: 8080
