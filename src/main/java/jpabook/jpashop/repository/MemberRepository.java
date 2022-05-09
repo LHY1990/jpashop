@@ -1,6 +1,7 @@
 package jpabook.jpashop.repository;
 
 import jpabook.jpashop.domain.Member;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -11,10 +12,11 @@ import java.util.List;
 
 
 @Repository
+@RequiredArgsConstructor //[2번 선택지]
 public class MemberRepository {
 
-    @PersistenceContext
-    private EntityManager em;
+//    @PersistenceContext [1번 선택지] //최신 스프링부트 jpa의 경우 @Autowired로도 em을 쓸수있다. 그렇기에 2번선택지를 쓸수있다.
+    private final EntityManager em;
 
 //    @PersistenceUnit
 //    private EntityManagerFactory emf;
