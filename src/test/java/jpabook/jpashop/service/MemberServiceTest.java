@@ -16,7 +16,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class MemberServiceTest {
 
     @Autowired MemberService memberService;
-    @Autowired MemberRepository memberRepository
+    @Autowired
+    MemberRepository memberRepository;
 
     @Test
     public void 회원가입() throws Exception{
@@ -33,7 +34,7 @@ class MemberServiceTest {
     }
 
     @Test
-    public void 중복회원관리리() hrows Exception{
+    public void 중복회원관리리() throws Exception{
         //given
 
         //when
